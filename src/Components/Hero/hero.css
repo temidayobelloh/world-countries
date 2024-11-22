@@ -1,0 +1,50 @@
+.hero-body{
+    height: 100vh;
+    max-width: 1440px;
+    padding: 0;
+    background-color: ghostwhite;
+}
+.searchWrapper{
+    display: flex;
+    align-items: center;
+    margin-left: 120px;
+    position: relative;
+}
+.searchWrapper input{
+    margin-top: 40px;
+    padding: 20px;
+    width: 250px;
+    font-size: 17px;
+    height: 9px;
+    background-color: white;
+    border: none;
+    border-radius: 05px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+.searchWrapper input[placeholder] {
+    text-align: center;
+    font-size: 15px;
+    color: black;
+}
+.searchWrapper input:focus{
+    box-shadow: 2px 4px 8px rgba(207, 208, 209, 0.5); 
+  border: whitesmoke;
+  border: none;
+}
+.searchWrapper button{
+    margin-top: 30px;
+    text-align: center;
+    background-color: white;
+    border: none;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    border-radius: 100%;
+}
+.searchWrapper button:hover{
+    border: 1px solid gainsboro;
+}
+.searchWrapper img{
+    width: 30px;
+    height: 30px;
+}
