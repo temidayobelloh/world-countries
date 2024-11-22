@@ -1,0 +1,44 @@
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+    background-color: white;
+    border-bottom: 1px solid gainsboro;
+}
+.navBar h2{
+    text-align: center;
+    color: black;
+    margin-left: 100px;
+    padding: 20px;
+    width: 250px;
+    height: 16px;
+    line-height: 10px;
+}
+.navBar p{
+    margin-right: 130px;
+    text-align: center;
+    color: black;
+    width: 120px;
+    line-height: 40px;
+    height: 40px;
+    font-weight: 400;
+    font-size: 16px;
+    
+}
+.navBar button{
+    background-color: white;
+    border: none;
+    text-align: center;
+    border-radius: 100%;
+    margin: 0;
+    padding: 5px;
+}
+.navBar button:hover{
+    cursor: pointer;
+    border-bottom: 2px solid gainsboro;
+}
+.navBar img{
+    height: 25px;
+    vertical-align: middle;
+}
