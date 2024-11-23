@@ -1,5 +1,5 @@
 import './navBar.css';
-import darkMode from '../Assets/dark_mode_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg';
+import darkMode from '../Assets/dark_mode_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg';
 
 const NavBar = () => {
   return (
