@@ -1,16 +1,19 @@
 .searchWrapper {
     text-align: center;
     margin-left: 0;
+    position: relative;
+    max-width: 320px;
+    height: 60px;
 }
 
 .searchInputContainer {
     position: relative;
     width: 100%;
-    max-width: 500px; /* Ensure a fixed max-width */
+    max-width: 500px; 
 }
 
 .searchInputContainer input {
-    width: 310px; /* Fixed width */
+    width: 310px; 
     padding: 0.8rem 3rem 0.8rem 1rem;
     font-size: 15px;
     border: 1px solid #ccc;
@@ -21,7 +24,7 @@
 }
 
 .searchInputContainer input::placeholder {
-    text-align: center; /* Fixed typo here */
+    text-align: center; 
 }
 
 .searchInputContainer input:focus {
@@ -52,15 +55,13 @@
     height: 20px;
 }
 
-/* Output wrapper - ensure the output is separated from the search input */
+
 .output-wrapper {
-    margin-top: 4rem;  /* Adds space between input and output */
-    width: 100%;  /* Ensure full width */
-    max-width: 1100px;  /* Restrict width of output */
-    margin: 0 auto;  /* Center the output */
+    margin-top: 4rem;  
+    width: 100%;  
+    margin: 0 auto;  
 }
 
-/* Style the output content */
 .output {
     text-align: left;
 }
@@ -73,43 +74,53 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;  /* Ensure the container doesn't exceed the width */
-    max-width: 1100px;
-    margin: auto 0;
-    margin-top: 50px;
-    flex-direction: row;
+    width: 1000px;
+    height: 380px;
+    border: 1px solid red;   
 }
 
 .country-details img {
     margin-right: 40px;
-    width: 400px; /* Fixed width */
-    height: 200px; /* Fixed height */
-    object-fit: cover; /* Ensures the image fits into the box without distortion */
-    border-radius: 5px; /* Optional: adds rounded corners */
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for aesthetics */
+    width: 400px; 
+    height: 200px; 
+    object-fit: cover;
+    border-radius: 10px; 
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1); 
     cursor: pointer;
 }
 
 .country-info {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;  /* Fix the gap to 2rem */
-    width: 590px;
-    border: 1px solid red;
-}
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;  
+    width: 600px;
 
+}
+.country-info-one{
+    padding: 0;
+    width: 270px;
+    height: 240px;
+    margin: 0;
+}
 .country-info-two {
-    margin-top: 42px;
-    margin-right: 20px;
+    margin-top: 0px;
+    width: 170px;
+    height: 107px;
+    padding: 0;
+}
+.button-countries{
+    max-width: 200px;
+    border: 1px solid pink;
+    display: inline;
 }
 .border-countries button{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid red;
-    width: 80px;
-    height: 25px;
-    background-color: transparent;
-    margin: 2px;
+    width: 65px;
+    height: 20px;
+    margin: 5px;
+    text-align: center;
+    color: black;
+    background-color: white;
     border: 1px solid black;
+    border-radius: 2px;
 }

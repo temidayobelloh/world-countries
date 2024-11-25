@@ -76,7 +76,7 @@ const SearchInput = () => {
                         <div className="country-details">
                             <img src={countryData.flags.svg} alt="country" />
                             <div className="country-info">
-                                <div>
+                                <div className= "country-info-one">
                                     <h1>{countryData.name.common}</h1>
                                     <p><b>Native name:</b> {countryData.name.nativeName?.eng?.common || 'Not available'}</p>
                                     <p><b>Population: </b> {countryData.population.toLocaleString()}</p>
@@ -87,9 +87,8 @@ const SearchInput = () => {
                                 <div className='country-info-two'>
                                     <p><b>Currency: </b>{countryData.currencies ? Object.values(countryData.currencies)[0].name : 'Not available'}</p>
                                     <p><b>Languages: </b> {countryData.languages ? Object.values(countryData.languages).join(', ') : 'Not available'}</p>
-                                    </div>
-                            </div>
-                            <div className='border-countries'>
+                                    <div className='border-countries'>
+                                        <div>
                                         <b>Border Countries: </b>
                                         {countryData.borders && countryData.borders.length > 0 ? (
                                             countryData.borders.map((border, index) => (
@@ -104,7 +103,10 @@ const SearchInput = () => {
                                             <span> None</span>
                                         )}
                                     </div>
+                                    </div>
                             
+                                    </div>
+                            </div>
                         </div>
                         
                     )}
