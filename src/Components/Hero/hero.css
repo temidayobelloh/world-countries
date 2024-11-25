@@ -1,14 +1,15 @@
 .hero-body {
     display: flex;
     align-items: flex-start; 
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100vh;
-    padding: 2%;
+    padding: 4%;
     background-color: ghostwhite;
+    max-width:1400px;
+    
 }
 
 .hero-body select {
-    margin-right: 100px; 
     padding:  1rem 1rem; 
     height: auto;
     line-height: normal;

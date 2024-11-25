@@ -9,7 +9,7 @@
 .navBar h2{
     text-align: center;
     color: black;
-    margin-left: 80px;
+    margin-left: 200px;
     padding: 20px;
     width: 250px;
     height: 16px;
@@ -17,7 +17,7 @@
     font-size: 20px;
 }
 .navBar p{
-    margin-right: 130px;
+    margin-right:230px;
     text-align: center;
     color: black;
     width: 120px;

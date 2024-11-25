@@ -8,10 +8,18 @@ const SearchInput = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
+    // Function to handle user input
     const handleSearchInput = (event) => {
-        setSearchInput(event.target.value);
+        const inputValue = event.target.value;
+        setSearchInput(inputValue);
+
+        if (inputValue.trim() === '') {
+            setCountryData(null);
+            setError(null);
+        }
     };
 
+    // Function to fetch country data
     const fetchCountryData = async () => {
         if (!searchInput.trim()) {
             alert('Please enter a country name.');
@@ -36,27 +44,75 @@ const SearchInput = () => {
         }
     };
 
+    // Function to fetch details of a border country
+    const fetchBorderDetails = async (borderCode) => {
+        try {
+            const response = await fetch(`https://restcountries.com/v3.1/alpha/${borderCode}`);
+            const [borderCountryData] = await response.json();
+            alert(`Border Country: ${borderCountryData.name.common}`);
+        } catch (error) {
+            console.error('Error fetching border country details:', error);
+        }
+    };
+
     return (
-        <div className='searchWrapper'>
-            <input
-                type='search'
-                placeholder='Search for a country...'
-                value={searchInput}
-                onChange={handleSearchInput}
-            />
-            <button onClick={fetchCountryData}>
-                <img src={searchIcon} alt='searchIcon' />
-            </button>
-            {isLoading && <p>Loading...</p>}
-            {error && <p>{error}</p>}
-            {countryData && (
-                <div>
-                    <h2>{countryData.name.common}</h2>
-                    <p>Population: {countryData.population.toLocaleString()}</p>
-                    <p>Region: {countryData.region}</p>
-                    <p>Capital: {countryData.capital?.[0]}</p>
+        <div className="searchWrapper">
+            <div className="searchInputContainer">
+                <input
+                    type="search"
+                    placeholder="Search for a country..."
+                    value={searchInput}
+                    onChange={handleSearchInput}
+                />
+                <button onClick={fetchCountryData}>
+                    <img src={searchIcon} alt="Search Icon" />
+                </button>
+            </div>
+            <div className="output-wrapper">
+                <div className="output">
+                    {isLoading && <p>Loading...</p>}
+                    {error && <p>{error}</p>}
+                    {countryData && (
+                        <div className="country-details">
+                            <img src={countryData.flags.svg} alt="country" />
+                            <div className="country-info">
+                                <div>
+                                    <h1>{countryData.name.common}</h1>
+                                    <p><b>Native name:</b> {countryData.name.nativeName?.eng?.common || 'Not available'}</p>
+                                    <p><b>Population: </b> {countryData.population.toLocaleString()}</p>
+                                    <p><b>Region: </b>{countryData.region}</p>
+                                    <p><b>Sub Region: </b> {countryData.subregion}</p>
+                                    <p><b>Capital: </b>{countryData.capital?.[0]}</p>
+                                </div>
+                                <div className='country-info-two'>
+                                    <p><b>Currency: </b>{countryData.currencies ? Object.values(countryData.currencies)[0].name : 'Not available'}</p>
+                                    <p><b>Languages: </b> {countryData.languages ? Object.values(countryData.languages).join(', ') : 'Not available'}</p>
+                                    </div>
+                            </div>
+                            <div className='border-countries'>
+                                        <b>Border Countries: </b>
+                                        {countryData.borders && countryData.borders.length > 0 ? (
+                                            countryData.borders.map((border, index) => (
+                                                <button 
+                                                    key={index} 
+                                                    onClick={() => fetchBorderDetails(border)}
+                                                >
+                                                    {border}
+                                                </button>
+                                            ))
+                                        ) : (
+                                            <span> None</span>
+                                        )}
+                                    </div>
+                            
+                        </div>
+                        
+                    )}
                 </div>
-            )}
+                
+                
+            </div>
+            
         </div>
     );
 };

@@ -1,53 +1,115 @@
 .searchWrapper {
-    margin-left: 7%;
+    text-align: center;
+    margin-left: 0;
+}
+
+.searchInputContainer {
     position: relative;
+    width: 100%;
+    max-width: 500px; /* Ensure a fixed max-width */
 }
 
-.searchWrapper input {
-    margin: 0; 
-    padding: 1rem 1rem; 
-    width: 150%;
-    font-size: 13px;
-    height: auto;
-    background-color: white;
-    border: none;
+.searchInputContainer input {
+    width: 310px; /* Fixed width */
+    padding: 0.8rem 3rem 0.8rem 1rem;
+    font-size: 15px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.searchWrapper input[placeholder] {
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-size: 1rem; 
-    color: black;
-    background-color: white;
+    box-sizing: border-box;
 }
 
-.searchWrapper input:focus {
+.searchInputContainer input::placeholder {
+    text-align: center; /* Fixed typo here */
+}
+
+.searchInputContainer input:focus {
+    outline: none;
     box-shadow: 2px 4px 8px rgba(207, 208, 209, 0.5);
-    background-color: white;
-    border: none;
 }
 
-.searchWrapper button {
-    margin-top: 2%; 
-    text-align: center;
-    background-color: white;
-    border: none;
+.searchInputContainer button {
     position: absolute;
-    border-radius: 100%;
-    top: 40%; 
-    left: 5%; 
-    transform: translateY(-40%); 
-    padding: 2px;
-}
-
-.searchWrapper button:hover {
-    border-bottom: 2px solid gainsboro;
-    cursor: pointer;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     background-color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    text-align: center;
 }
 
-.searchWrapper img {
-    width: 1.9rem; 
-    height: 1.8rem;
+.searchInputContainer button:hover {
+    cursor: pointer;
+    border-radius: 100%;
+    border-bottom: 1px solid gainsboro;
+}
+
+.searchInputContainer button img {
+    width: 19px;
+    height: 20px;
+}
+
+/* Output wrapper - ensure the output is separated from the search input */
+.output-wrapper {
+    margin-top: 4rem;  /* Adds space between input and output */
+    width: 100%;  /* Ensure full width */
+    max-width: 1100px;  /* Restrict width of output */
+    margin: 0 auto;  /* Center the output */
+}
+
+/* Style the output content */
+.output {
+    text-align: left;
+}
+
+.output p, .output h2 {
+    margin: 0.5rem 0;
+}
+
+.country-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;  /* Ensure the container doesn't exceed the width */
+    max-width: 1100px;
+    margin: auto 0;
+    margin-top: 50px;
+    flex-direction: row;
+}
+
+.country-details img {
+    margin-right: 40px;
+    width: 400px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Ensures the image fits into the box without distortion */
+    border-radius: 5px; /* Optional: adds rounded corners */
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for aesthetics */
+    cursor: pointer;
+}
+
+.country-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;  /* Fix the gap to 2rem */
+    width: 590px;
+    border: 1px solid red;
+}
+
+.country-info-two {
+    margin-top: 42px;
+    margin-right: 20px;
+}
+.border-countries button{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    width: 80px;
+    height: 25px;
+    background-color: transparent;
+    margin: 2px;
+    border: 1px solid black;
 }
