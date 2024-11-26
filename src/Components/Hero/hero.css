@@ -8,13 +8,3 @@
     max-width:1400px;
     
 }
-
-.hero-body select {
-    padding:  1rem 1rem; 
-    height: auto;
-    line-height: normal;
-    border-radius: 10px;
-    text-align: left;
-    font-size: 15px;
-    color: blue;
-}
