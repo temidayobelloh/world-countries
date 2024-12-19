@@ -1,8 +1,9 @@
 import './searchInput.css';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import searchIcon from '../Assets/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg';
 
-const SearchInput = () => {
+const SearchInput = ({ setShowLayout }) => {
     const [searchInput, setSearchInput] = useState('');
     const [countryData, setCountryData] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -16,6 +17,7 @@ const SearchInput = () => {
         if (inputValue.trim() === '') {
             setCountryData(null);
             setError(null);
+            setShowLayout(true);
         }
     };
 
@@ -23,6 +25,7 @@ const SearchInput = () => {
     const fetchCountryData = async () => {
         if (!searchInput.trim()) {
             alert('Please enter a country name.');
+            setShowLayout(true); 
             return;
         }
 
@@ -33,17 +36,25 @@ const SearchInput = () => {
             const data = await response.json();
             if (data.length > 0) {
                 setCountryData(data[0]);
+                setShowLayout(false);
             } else {
                 setCountryData(null);
                 setError('Country not found');
+                setShowLayout(true); 
             }
         } catch (error) {
             setError('An error occurred while fetching data');
+            setShowLayout(true);
+
         } finally {
             setIsLoading(false);
         }
     };
+    //function to return to layout page
+    const returnBtn=()=>{
+        window.location.href = {<Layout/>}
 
+    }
     // Function to fetch details of a border country
     const fetchBorderDetails = async (borderCode) => {
         try {
@@ -73,6 +84,7 @@ const SearchInput = () => {
                     {isLoading && <p>Loading...</p>}
                     {error && <p>{error}</p>}
                     {countryData && (
+                        
                         <div className="country-details">
                             <img src={countryData.flags.svg} alt="country" />
                             <div className="country-info">
@@ -83,6 +95,7 @@ const SearchInput = () => {
                                     <p><b>Region: </b>{countryData.region}</p>
                                     <p><b>Sub Region: </b> {countryData.subregion}</p>
                                     <p><b>Capital: </b>{countryData.capital?.[0]}</p>
+                                    <button className='back-btn'>Back</button>
                                 </div>
                                 <div className='country-info-two'>
                                     <p><b>Currency: </b>{countryData.currencies ? Object.values(countryData.currencies)[0].name : 'Not available'}</p>
@@ -104,11 +117,9 @@ const SearchInput = () => {
                                         )}
                                     </div>
                                     </div>
-                            
                                     </div>
                             </div>
-                        </div>
-                        
+                        </div>                      
                     )}
                 </div>
                 

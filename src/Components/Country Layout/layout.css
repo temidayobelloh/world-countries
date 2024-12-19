@@ -7,7 +7,8 @@
     gap: 25px;
     padding: 29px;
     background-color: #f9f9f9;
-    margin-top: 0px;    
+    margin-top: 0px;   
+
   }
   
   .card {
@@ -18,7 +19,7 @@
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 250px;
+    width: 245px;
     height: 340px;
   }
   
@@ -27,14 +28,14 @@
     height: 180px;
     object-fit: cover;
     object-position: center;
-    border-radius: 5px;
-    border-bottom: 1px solid #7c7c7c;
+    border-radius: 7px;
+
 
   }
   
   h2 {
     margin: 13px 0;
-    font-size: 19px;
+    font-size: 16px;
     text-align: left;
     margin-left: 25px;
   }

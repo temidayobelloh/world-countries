@@ -2,11 +2,11 @@ import './hero.css';
  import SearchInput from '../SearchInput/searchInput';
  import SelectCountry from '../SelectCountry/SelectCountry';
 
-const Hero = () => {
+const Hero = ({ setShowLayout }) => {
   return (
     <div className='hero-body'>
     <div className='searchWrapper'>
-    <SearchInput/>
+    <SearchInput setShowLayout={setShowLayout} />
     </div>
     <div className='selectCountryWrapper'>
    <SelectCountry/>
