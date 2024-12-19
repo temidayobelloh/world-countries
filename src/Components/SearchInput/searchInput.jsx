@@ -1,6 +1,5 @@
 import './searchInput.css';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import searchIcon from '../Assets/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg';
 
 const SearchInput = ({ setShowLayout }) => {
@@ -51,10 +50,7 @@ const SearchInput = ({ setShowLayout }) => {
         }
     };
     //function to return to layout page
-    const returnBtn=()=>{
-        window.location.href = {<Layout/>}
-
-    }
+    
     // Function to fetch details of a border country
     const fetchBorderDetails = async (borderCode) => {
         try {
