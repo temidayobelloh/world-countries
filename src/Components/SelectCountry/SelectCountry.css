@@ -1,6 +1,7 @@
 .hero-body select {
     padding:  0.7rem 0.7rem; 
-    height: auto;
+    height: 45px;
+    width:190px;
     line-height: normal;
     border-radius: 9px;
     text-align: center;
