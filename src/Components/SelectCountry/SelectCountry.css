@@ -1,9 +1,9 @@
 .hero-body select {
-    padding:  1rem 1rem; 
+    padding:  0.7rem 0.7rem; 
     height: auto;
     line-height: normal;
-    border-radius: 10px;
-    text-align: left;
-    font-size: 15px;
-    color: green;
+    border-radius: 9px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: black;
 }

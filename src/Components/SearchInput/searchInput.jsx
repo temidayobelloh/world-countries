@@ -1,5 +1,6 @@
 import './searchInput.css';
 import { useState } from 'react';
+
 import searchIcon from '../Assets/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg';
 
 const SearchInput = ({ setShowLayout }) => {
@@ -49,8 +50,7 @@ const SearchInput = ({ setShowLayout }) => {
             setIsLoading(false);
         }
     };
-    //function to return to layout page
-    
+  
     // Function to fetch details of a border country
     const fetchBorderDetails = async (borderCode) => {
         try {
@@ -70,8 +70,9 @@ const SearchInput = ({ setShowLayout }) => {
                     placeholder="Search for a country..."
                     value={searchInput}
                     onChange={handleSearchInput}
+                    onKeyDown={(e) => { if (e.key === 'Enter') fetchCountryData(); }}
                 />
-                <button onClick={fetchCountryData}>
+                <button onClick={fetchCountryData} >
                     <img src={searchIcon} alt="Search Icon" />
                 </button>
             </div>
@@ -91,7 +92,8 @@ const SearchInput = ({ setShowLayout }) => {
                                     <p><b>Region: </b>{countryData.region}</p>
                                     <p><b>Sub Region: </b> {countryData.subregion}</p>
                                     <p><b>Capital: </b>{countryData.capital?.[0]}</p>
-                                    <button className='back-btn'>Back</button>
+                                    <button className='back-btn' onClick={() => {setCountryData(null); setShowLayout(true); }}> 
+                                        Back to Home </button>
                                 </div>
                                 <div className='country-info-two'>
                                     <p><b>Currency: </b>{countryData.currencies ? Object.values(countryData.currencies)[0].name : 'Not available'}</p>
